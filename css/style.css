@@ -5,6 +5,7 @@
 /*screen*/
 @import "weather.css";
 @import "music.css";
+@import "clock.css";
 
 /*components*/
 @import "components/pannel.css";
@@ -16,6 +17,9 @@ body {
   overflow: hidden;
   font-family: "Oswald", sans-serif;
   background: url("../img/test.jpeg") center/cover no-repeat;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .top-bar {
