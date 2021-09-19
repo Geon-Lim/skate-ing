@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
+@import "reset.css";
+
+/*screen*/
+@import "weather.css";
+@import "music.css";
+
+/*components*/
+@import "components/pannel.css";
+
+body {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: "Oswald", sans-serif;
+  background: url("../img/test.jpeg") center/cover no-repeat;
+}
+
+.top-bar {
+  width: 100vw;
+  height: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 20px;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,49 @@
+.weather {
+  display: flex;
+}
+
+.weather__icon {
+  height: 20px;
+  width: 30px;
+  color: white;
+  padding-top: 2px;
+}
+
+.weather__temp {
+  color: white;
+  font-size: 20px;
+  padding-left: 7px;
+}
+
+.weather:hover .weather__pannel {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.weather__pannel {
+  color: white;
+}
+
+.weather__pannel__icon {
+  height: 70px;
+  margin-top: 30px;
+}
+
+.weather__pannel__description {
+  font-size: 25px;
+  text-transform: capitalize;
+}
+
+.weather__pannel__city {
+  opacity: 0.7;
+}
+
+.weather__pannel__skate {
+  opacity: 0.9;
+}
+
+.weather__pannel__city i {
+  padding-right: 5px;
+}
