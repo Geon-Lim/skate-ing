@@ -39,7 +39,7 @@ function onGeoSuccess(position) {
         weatherData === "Snow" ||
         weatherData === "Thunderstorm"
       ) {
-        skate.innerText = '"Hopes the sky clears tomorrow"';
+        skate.innerText = '"Hope the sky clears tomorrow"';
       } else {
         skate.innerText = '"Not the best day to skate"';
       }

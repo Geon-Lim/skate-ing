@@ -27,26 +27,6 @@
           <div class="weather__pannel__skate"><span></span></div>
         </div>
       </div>
-      <div class="music">
-        <div class="music__description"></div>
-        <div class="music__btn">
-          <button class="music__btn__list music-btn">
-            <i class="fas fa-list-ul"></i>
-          </button>
-          <button class="music__btn__previous music-btn">
-            <i class="fas fa-step-backward"></i>
-          </button>
-          <button class="music__btn__play music-btn">
-            <i class="fas fa-play"></i>
-          </button>
-          <button class="music__btn__next music-btn">
-            <i class="fas fa-step-forward"></i>
-          </button>
-          <button class="music__btn__replay music-btn">
-            <i class="fas fa-redo"></i>
-          </button>
-        </div>
-      </div>
     </div>
     <div class="main">
       <div class="spot"></div>
@@ -54,7 +34,28 @@
       <div class="todo"></div>
     </div>
     <div class="bottom-bar">
-      <div quote></div>
+      <div class="music">
+        <button class="music__btn__list music-btn">
+          <i class="fas fa-list-ul fa-2x"></i>
+        </button>
+        <button class="music__btn__previous music-btn">
+          <i class="fas fa-step-backward fa-2x"></i>
+        </button>
+        <button class="music__btn__play">
+          <div class="music__play__cog"><i class="fas fa-cog fa-2x"></i></div>
+          <div class="music__description">
+            <span class="music__title"></span>
+            <span class="music__singer hidden"> </span>
+          </div>
+          <div class="music__play__cog"><i class="fas fa-cog fa-2x"></i></div>
+        </button>
+        <button class="music__btn__next music-btn">
+          <i class="fas fa-step-forward fa-2x"></i>
+        </button>
+        <button class="music__btn__replay music-btn">
+          <i class="fas fa-redo fa-2x"></i>
+        </button>
+      </div>
     </div>
 
     <script
@@ -64,5 +65,6 @@
     <script src="js/background.js"></script>
     <script src="js/weather.js"></script>
     <script src="js/clock.js"></script>
+    <script src="js/music.js"></script>
   </body>
 </html>

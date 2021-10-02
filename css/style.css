@@ -31,6 +31,14 @@ body {
   padding: 30px 20px;
 }
 
+.bottom-bar {
+  width: 100vw;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .hidden {
   display: none;
 }
