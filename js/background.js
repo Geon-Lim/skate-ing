@@ -24,4 +24,4 @@ const todaysImage = images[randomNumber].name;
 attribute.href = images[randomNumber].attributeLink;
 attribute.innerText = images[randomNumber].attributeText;
 
-document.body.style.background = `url('/img/${todaysImage}.jpg') center/cover no-repeat`;
+document.body.style.background = `url('img/${todaysImage}.jpg') center/cover no-repeat`;
