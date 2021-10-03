@@ -3,15 +3,15 @@
 }
 
 .weather__icon {
-  height: 20px;
+  height: 27px;
   width: 30px;
   color: white;
-  padding-top: 2px;
+  padding-top: 6px;
 }
 
 .weather__temp {
   color: white;
-  font-size: 20px;
+  font-size: 25px;
   padding-left: 7px;
 }
 

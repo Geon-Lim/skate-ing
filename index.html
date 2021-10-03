@@ -12,7 +12,7 @@
     <title>Skate-ing</title>
   </head>
   <body>
-    <div class="top-bar">
+    <div class="top-bar hidden">
       <div class="weather">
         <div class="weather__icon"><i></i></div>
         <div class="weather__temp"><span></span></div>
@@ -27,16 +27,42 @@
           <div class="weather__pannel__skate"><span></span></div>
         </div>
       </div>
+      <div class="todo">
+        <i class="fas fa-list"></i>
+        <span>TODO</span>
+
+        <div class="todo__pannel pannel hidden">
+          <form class="todo-form">
+            <input
+              type="text"
+              placeholder="Where do you want to skate?"
+              required
+            />
+          </form>
+          <ul class="todo-list"></ul>
+        </div>
+      </div>
     </div>
     <div class="main">
-      <div class="spot"></div>
-      <div class="clock"><span>00:00</span></div>
-      <div class="todo"></div>
+      <form class="login-form">
+        <span>What is your name, Skater?</span>
+        <input required maxlength="15" type="text" />
+        <button class="hidden">Log In</button>
+      </form>
+      <div class="clock hidden">
+        <span class="time">00:00</span>
+        <span class="greeting hidden"></span>
+      </div>
+
+      <div class="skateboard hidden">
+        <img src="img/skateboard.png" />
+      </div>
     </div>
-    <div class="bottom-bar">
+    <div class="bottom-bar hidden">
+      <div class="attribute"><a></a></div>
       <div class="music">
-        <button class="music__btn__list music-btn">
-          <i class="fas fa-list-ul fa-2x"></i>
+        <button class="music__btn__random music-btn">
+          <i class="fas fa-random fa-2x"></i>
         </button>
         <button class="music__btn__previous music-btn">
           <i class="fas fa-step-backward fa-2x"></i>
@@ -44,8 +70,10 @@
         <button class="music__btn__play">
           <div class="music__play__cog"><i class="fas fa-cog fa-2x"></i></div>
           <div class="music__description">
+            <span class="music__current-time music__time"></span>
             <span class="music__title"></span>
             <span class="music__singer hidden"> </span>
+            <span class="music__total-time music__time"></span>
           </div>
           <div class="music__play__cog"><i class="fas fa-cog fa-2x"></i></div>
         </button>
@@ -66,5 +94,7 @@
     <script src="js/weather.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/music.js"></script>
+    <script src="js/greeting.js"></script>
+    <script src="js/todo.js"></script>
   </body>
 </html>

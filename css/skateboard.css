@@ -1,0 +1,28 @@
+.clock {
+  margin-top: 200px;
+}
+
+.clock span {
+  font-size: 150px;
+  color: white;
+  font-weight: 600;
+}
+
+.skateboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.skateboard img {
+  margin-top: 200px;
+  width: 450px;
+  bottom: 70px;
+  right: 50px;
+  z-index: 3;
+}
+
+.skateboard img:hover {
+  transform: rotateZ(20deg) translateY(-50px);
+}

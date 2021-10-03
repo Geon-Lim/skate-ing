@@ -25,6 +25,10 @@
   border: 3px solid #66605a;
 }
 
+.music__btn__play:active {
+  transform: translateY(10px);
+}
+
 .music-btn {
   height: 100%;
   width: 7%;
@@ -34,15 +38,15 @@
 }
 
 .music-btn:active {
-  transform: translateY(30px);
+  transform: translateY(10px);
 }
 
 .music__play__cog {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 45px;
-  height: 45px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   border: 2px solid rgb(146, 134, 134);
   background-color: #ffffff;
@@ -63,10 +67,11 @@
 
 .music__description {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   color: rgb(255, 248, 235);
   font-size: 15px;
+  padding: 0px 5px;
 }
 
 .music__description:hover .music__singer {
@@ -74,4 +79,8 @@
 }
 .music__description:hover .music__title {
   display: none;
+}
+
+.music__time {
+  font-size: 13px;
 }

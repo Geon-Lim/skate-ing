@@ -1,13 +1,3 @@
-function cogTurn() {
-  const cog = document.querySelectorAll(".music__play__cog .fa-cog");
-  cog[0].classList.toggle("cog-turn");
-  cog[1].classList.toggle("cog-turn");
-}
-
-const musicPlayBtn = document.querySelector(".music__btn__play");
-
-musicPlayBtn.addEventListener("click", cogTurn);
-
 const music = [
   {
     title: "사랑은 (Feat. 원슈타인)",
@@ -48,9 +38,14 @@ const music = [
 
 const playBtn = document.querySelector(".music__btn__play");
 const nextBtn = document.querySelector(".music__btn__next");
-const prevBtn = document.querySelector(".music__btn__play");
+const prevBtn = document.querySelector(".music__btn__previous");
+const randomBtn = document.querySelector(".music__btn__random");
+const replayBtn = document.querySelector(".music__btn__replay");
+
 const title = document.querySelector(".music__title");
 const singer = document.querySelector(".music__singer");
+const currentTime = document.querySelector(".music__current-time");
+const totalTime = document.querySelector(".music__total-time");
 
 let musicList = [];
 let currentPlay = false;
@@ -69,8 +64,30 @@ function setSong(url) {
   return song;
 }
 
+function setTime() {
+  const song = musicList[position];
+
+  const totalSeconds = Math.floor(song.duration);
+  const totalMinute = String(Math.floor(totalSeconds / 60)).padStart(2, "0");
+  const totalSecond = String(totalSeconds % 60).padStart(2, "0");
+
+  const currentSeconds = Math.floor(song.currentTime);
+  const currentMinute = String(Math.floor(currentSeconds / 60)).padStart(
+    2,
+    "0"
+  );
+  const currentSecond = String(currentSeconds % 60).padStart(2, "0");
+
+  if (totalSeconds !== NaN) {
+    totalTime.innerText = `${totalMinute}:${totalSecond}`;
+    currentTime.innerText = `${currentMinute}:${currentSecond}`;
+    console.log(currentMinute, currentSecond);
+  }
+}
+
 function play() {
   const song = musicList[position];
+  setDescription(music[position]);
   if (currentPlay === false) {
     song.play();
     currentPlay = true;
@@ -80,9 +97,51 @@ function play() {
   }
 }
 
-function pause() {
+function next() {
+  let song = musicList[position];
+  if (currentPlay === true) {
+    song.pause();
+  }
+  position++;
+  checkMaxPostion();
+  song = musicList[position];
+  song.load();
+  song.play();
+  currentPlay = true;
+  setDescription(music[position]);
+}
+
+function prev() {
+  let song = musicList[position];
+  if (currentPlay === true) {
+    song.pause();
+  }
+  position--;
+  checkMaxPostion();
+  song = musicList[position];
+  song.load();
+  song.play();
+  currentPlay = true;
+  setDescription(music[position]);
+}
+
+function random() {
+  if (currentPlay === true) {
+    play();
+    currentPlay = true;
+  }
+  const randomNumber = Math.floor(Math.random() * musicList.length);
+  position = randomNumber;
+  setDescription(music[position]);
+  replay();
+}
+
+function replay() {
   const song = musicList[position];
-  song.pause();
+  song.load();
+  if (currentPlay === true) {
+    song.play();
+  }
 }
 
 function onSongEnd() {
@@ -96,6 +155,8 @@ function onSongEnd() {
 function checkMaxPostion() {
   if (position >= music.length) {
     position = 0;
+  } else if (position < 0) {
+    position = music.length - 1;
   }
 }
 
@@ -107,3 +168,25 @@ function setDescription(song) {
 setList();
 setDescription(music[position]);
 playBtn.addEventListener("click", play);
+nextBtn.addEventListener("click", next);
+prevBtn.addEventListener("click", prev);
+randomBtn.addEventListener("click", random);
+replayBtn.addEventListener("click", replay);
+
+setInterval(setTime, 1000);
+
+/* cog turn */
+function cogTurn() {
+  const cog = document.querySelectorAll(".music__play__cog .fa-cog");
+  if (currentPlay === true) {
+    cog[0].classList.add("cog-turn");
+    cog[1].classList.add("cog-turn");
+  } else if (currentPlay === false) {
+    cog[0].classList.remove("cog-turn");
+    cog[1].classList.remove("cog-turn");
+  }
+}
+
+playBtn.addEventListener("click", cogTurn);
+nextBtn.addEventListener("click", cogTurn);
+prevBtn.addEventListener("click", cogTurn);
