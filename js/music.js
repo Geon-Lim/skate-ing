@@ -81,7 +81,6 @@ function setTime() {
   if (totalSeconds !== NaN) {
     totalTime.innerText = `${totalMinute}:${totalSecond}`;
     currentTime.innerText = `${currentMinute}:${currentSecond}`;
-    console.log(currentMinute, currentSecond);
   }
 }
 
